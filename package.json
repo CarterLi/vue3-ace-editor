@@ -1,0 +1,20 @@
+{
+  "name": "vue3-ace-editor",
+  "version": "1.0.0",
+  "description": "Like vue2-ace-editor but more functional and supports Vue 3",
+  "main": "index.js",
+  "repository": "git@github.com:CarterLi/vue3-ace-editor.git",
+  "author": "李通洲 <carter.li@eoitek.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "ace-builds": "^1.4.12",
+    "resize-observer-polyfill": "^1.5.1",
+    "vue": "^3.0.0-rc.10"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}
