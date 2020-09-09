@@ -1,7 +1,7 @@
 import ace from 'ace-builds';
 import type { Ace } from 'ace-builds';
 import 'ace-builds/webpack-resolver';
-import { capitalize, defineComponent, markRaw } from 'vue';
+import { capitalize, defineComponent, markRaw, h } from 'vue';
 import ResizeObserver from 'resize-observer-polyfill';
 
 import type { VAceEditorInstance } from './types';
@@ -37,7 +37,7 @@ export const VAceEditor = defineComponent({
   },
   emits: ['update:value', 'init', ...Events],
   render(this: VAceEditorInstance) {
-    return <div class="v-ace" />;
+    return h('div');
   },
   mounted(this: VAceEditorInstance) {
     const editor = this._editor = markRaw(ace.edit(this.$el, {
