@@ -60,8 +60,9 @@ export const VAceEditor = defineComponent({
         this.$emit('init', editor);
     },
     beforeUnmount() {
-        this._ro?.disconnect();
-        this._editor?.destroy();
+        var _a, _b;
+        (_a = this._ro) === null || _a === void 0 ? void 0 : _a.disconnect();
+        (_b = this._editor) === null || _b === void 0 ? void 0 : _b.destroy();
     },
     methods: {
         focus() {
