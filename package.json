@@ -1,6 +1,6 @@
 {
   "name": "vue3-ace-editor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Like vue2-ace-editor but more functional and supports Vue 3",
   "main": "index.js",
   "repository": "git@github.com:CarterLi/vue3-ace-editor.git",

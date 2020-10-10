@@ -33,10 +33,15 @@ A packaging of [ace](https://ace.c9.io/). Inspired by [vue2-ace-editor](https://
 3. Use the component in template
 
     ```html
-    <v-ace-editor v-model="content" @init="editorInit" lang="html" theme="chrome" />
+    <v-ace-editor
+        v-model:value="content"
+        @init="editorInit"
+        lang="html"
+        theme="chrome"
+        style="height: 300px" />
     ```
 
-    prop `v-model`  is required
+    prop `v-model:value` is required. `<v-ace-editor>` has no height by default, its height must be specified manually
 
     prop `lang`, `theme` is same as [ace-editor's doc](https://github.com/ajaxorg/ace)
 
