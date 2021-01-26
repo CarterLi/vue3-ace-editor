@@ -1,8 +1,10 @@
 {
   "name": "vue3-ace-editor",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Like vue2-ace-editor but more functional and supports Vue 3",
   "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
   "repository": "git@github.com:CarterLi/vue3-ace-editor.git",
   "author": "李通洲 <carter.li@eoitek.com>",
   "license": "MIT",

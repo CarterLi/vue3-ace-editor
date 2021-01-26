@@ -47,6 +47,7 @@ export const VAceEditor = defineComponent({
             theme: 'ace/theme/' + this.theme,
             wrap: this.wrap,
             printMargin: this.printMargin,
+            useWorker: false,
             ...this.options,
         }));
         this._contentBackup = this.value;

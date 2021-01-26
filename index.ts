@@ -63,7 +63,7 @@ export const VAceEditor = defineComponent({
     });
     Events.forEach(x => {
       const eventName = 'on' + capitalize(x);
-      if (typeof this.$.vnode.props[eventName] === 'function') {
+      if (typeof this.$.vnode.props![eventName] === 'function') {
         editor.on(x as any, this.$emit.bind(this, x));
       }
     });
