@@ -48,7 +48,6 @@ A packaging of [ace](https://ace.c9.io/). Inspired by [vue2-ace-editor](https://
 ## Deferences with [vue2-ace-editor](https://github.com/chairuosen/vue2-ace-editor)
 
 1. This component uses [ace-builds](https://www.npmjs.com/package/ace-builds) directly, instead of the outdated wrapper [brace](https://www.npmjs.com/package/brace)
-1. Ace modes and themes are automatically resolved using `ace-builds/webpack-resolver`, no manual-import required.
 1. DOM size changes are detected automatically using [ResizeObserver](resize-observer-polyfill), thus no `width` / `height` props needed.
 1. For easier usage, more props / events added / emitted.
     1. Prop `readonly`: This Boolean attribute indicates that the user cannot modify the value of the control.
@@ -57,6 +56,17 @@ A packaging of [ace](https://ace.c9.io/). Inspired by [vue2-ace-editor](https://
     1. Prop `printMargin`: A short hand of `showPrintMargin` and `printMarginColumn`
     1. All ace events emitted. Docs can be found here: <https://ace.c9.io/#api=editor&nav=api>
     1. Some commonly used methods `focus`, `blur`, `selectAll` provided as shortcuts.
+
+## Breaking change
+
+Using of `ace-builds/webpack-resolver` is removed due to bug https://github.com/CarterLi/vue3-ace-editor/issues/3. You MUST import `theme` and `mode` yourself. eg.
+
+```js
+import 'ace-builds/src-noconflict/mode-text';
+import 'ace-builds/src-noconflict/theme-chrome';
+```
+
+Find all supported themes and modes in `node_modules/ace-builds/src-noconflict`
 
 ## LICENSE
 

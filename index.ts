@@ -1,6 +1,5 @@
 import ace from 'ace-builds';
 import type { Ace } from 'ace-builds';
-import 'ace-builds/webpack-resolver';
 import { capitalize, defineComponent, markRaw, h } from 'vue';
 import ResizeObserver from 'resize-observer-polyfill';
 
