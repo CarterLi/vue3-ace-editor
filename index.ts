@@ -34,6 +34,7 @@ export const VAceEditor = defineComponent({
     options: Object,
     placeholder: String,
     readonly: Boolean,
+    wrap: Boolean,
   },
   emits: ['update:value', 'init', ...Events],
   render(this: VAceEditorInstance) {
@@ -46,6 +47,7 @@ export const VAceEditor = defineComponent({
       value: this.value,
       mode: 'ace/mode/' + this.lang,
       theme: 'ace/theme/' + this.theme,
+      wrap: this.wrap,
       ...this.options,
     }));
     this._contentBackup = this.value;
@@ -97,6 +99,9 @@ export const VAceEditor = defineComponent({
     },
     placeholder(this: VAceEditorInstance, val: string) {
       this._editor.setOption('placeholder', val);
+    },
+    wrap(this: VAceEditorInstance, val: boolean) {
+      this._editor.setWrapBehavioursEnabled(val);
     },
   }
 });

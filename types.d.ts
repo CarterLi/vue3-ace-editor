@@ -14,6 +14,7 @@ export interface VAceEditorProps {
   readonly options: Partial<Ace.EditorOptions>;
   readonly placeholder: string;
   readonly readonly: boolean;
+  readonly wrap: boolean;
 }
 
 export interface VAceEditorMethods {
