@@ -35,6 +35,10 @@ export const VAceEditor = defineComponent({
     placeholder: String,
     readonly: Boolean,
     wrap: Boolean,
+    printMargin: {
+      type: [Boolean, Number],
+      default: true,
+    },
   },
   emits: ['update:value', 'init', ...Events],
   render(this: VAceEditorInstance) {
@@ -48,6 +52,7 @@ export const VAceEditor = defineComponent({
       mode: 'ace/mode/' + this.lang,
       theme: 'ace/theme/' + this.theme,
       wrap: this.wrap,
+      printMargin: this.printMargin,
       ...this.options,
     }));
     this._contentBackup = this.value;
@@ -102,6 +107,9 @@ export const VAceEditor = defineComponent({
     },
     wrap(this: VAceEditorInstance, val: boolean) {
       this._editor.setWrapBehavioursEnabled(val);
+    },
+    printMargin(this: VAceEditorInstance, val: boolean | number) {
+      this._editor.setOption('printMargin', val);
     },
   }
 });

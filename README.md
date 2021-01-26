@@ -54,6 +54,7 @@ A packaging of [ace](https://ace.c9.io/). Inspired by [vue2-ace-editor](https://
     1. Prop `readonly`: This Boolean attribute indicates that the user cannot modify the value of the control.
     1. Prop `placeholder`: A hint to the user of what can be entered in the control.
     1. Prop `wrap`: Indicates whether the control wraps text
+    1. Prop `printMargin`: A short hand of `showPrintMargin` and `printMarginColumn`
     1. All ace events emitted. Docs can be found here: <https://ace.c9.io/#api=editor&nav=api>
     1. Some commonly used methods `focus`, `blur`, `selectAll` provided as shortcuts.
 

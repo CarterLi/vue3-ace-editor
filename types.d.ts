@@ -15,6 +15,7 @@ export interface VAceEditorProps {
   readonly placeholder: string;
   readonly readonly: boolean;
   readonly wrap: boolean;
+  readonly printMargin: boolean | number;
 }
 
 export interface VAceEditorMethods {
