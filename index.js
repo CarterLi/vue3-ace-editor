@@ -1,5 +1,4 @@
 import ace from 'ace-builds';
-import 'ace-builds/webpack-resolver';
 import { capitalize, defineComponent, markRaw, h } from 'vue';
 import ResizeObserver from 'resize-observer-polyfill';
 const Events = [
@@ -29,6 +28,11 @@ export const VAceEditor = defineComponent({
         options: Object,
         placeholder: String,
         readonly: Boolean,
+        wrap: Boolean,
+        printMargin: {
+            type: [Boolean, Number],
+            default: true,
+        },
     },
     emits: ['update:value', 'init', ...Events],
     render() {
@@ -41,6 +45,8 @@ export const VAceEditor = defineComponent({
             value: this.value,
             mode: 'ace/mode/' + this.lang,
             theme: 'ace/theme/' + this.theme,
+            wrap: this.wrap,
+            printMargin: this.printMargin,
             ...this.options,
         }));
         this._contentBackup = this.value;
@@ -93,6 +99,12 @@ export const VAceEditor = defineComponent({
         },
         placeholder(val) {
             this._editor.setOption('placeholder', val);
+        },
+        wrap(val) {
+            this._editor.setWrapBehavioursEnabled(val);
+        },
+        printMargin(val) {
+            this._editor.setOption('printMargin', val);
         },
     }
 });
