@@ -111,5 +111,8 @@ export const VAceEditor = defineComponent({
     printMargin(this: VAceEditorInstance, val: boolean | number) {
       this._editor.setOption('printMargin', val);
     },
+    lang(this: VAceEditorInstance, val: string) {
+      this._editor.setOption('mode', 'ace/mode/' + val);
+    },
   }
 });
