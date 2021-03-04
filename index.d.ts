@@ -25,17 +25,19 @@ export declare const VAceEditor: import("vue").DefineComponent<{
     blur(this: VAceEditorInstance): void;
     selectAll(this: VAceEditorInstance): void;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<{
-    printMargin: number | boolean;
-    theme: string;
     value: string;
     lang: string;
-} & {
-    readonly?: boolean | undefined;
-    wrap?: boolean | undefined;
-    placeholder?: string | undefined;
-    options?: Record<string, any> | undefined;
-}>, {
-    printMargin: number | boolean;
     theme: string;
+    readonly: boolean;
+    wrap: boolean;
+    printMargin: number | boolean;
+} & {
+    options?: Record<string, any> | undefined;
+    placeholder?: string | undefined;
+}>, {
     lang: string;
+    theme: string;
+    readonly: boolean;
+    wrap: boolean;
+    printMargin: number | boolean;
 }>;

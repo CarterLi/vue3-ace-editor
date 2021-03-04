@@ -62,7 +62,7 @@ export const VAceEditor = defineComponent({
                 editor.on(x, this.$emit.bind(this, x));
             }
         });
-        this._ro = new ResizeObserver(([entry]) => editor.resize());
+        this._ro = new ResizeObserver(() => editor.resize());
         this._ro.observe(this.$el);
         this.$emit('init', editor);
     },
@@ -106,6 +106,9 @@ export const VAceEditor = defineComponent({
         },
         printMargin(val) {
             this._editor.setOption('printMargin', val);
+        },
+        lang(val) {
+            this._editor.setOption('mode', 'ace/mode/' + val);
         },
     }
 });
