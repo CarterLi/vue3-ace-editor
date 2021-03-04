@@ -67,7 +67,7 @@ export const VAceEditor = defineComponent({
         editor.on(x as any, this.$emit.bind(this, x));
       }
     });
-    this._ro = new ResizeObserver(([entry]) => editor.resize());
+    this._ro = new ResizeObserver(() => editor.resize());
     this._ro.observe(this.$el);
     this.$emit('init', editor);
   },
