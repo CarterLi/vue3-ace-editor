@@ -16,6 +16,8 @@ export interface VAceEditorProps {
   readonly readonly: boolean;
   readonly wrap: boolean;
   readonly printMargin: boolean | number;
+  readonly minLines: number;
+  readonly maxLines: number;
 }
 
 export interface VAceEditorMethods {

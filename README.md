@@ -41,7 +41,7 @@ A packaging of [ace](https://ace.c9.io/). Inspired by [vue2-ace-editor](https://
         style="height: 300px" />
     ```
 
-    prop `v-model:value` is required. `<v-ace-editor>` has no height by default, its height must be specified manually
+    prop `v-model:value` is required. `<v-ace-editor>` has no height by default. Its height must be specified manually, or set both `min-lines` and `max-lines` to make the editor's height auto-grow.
 
     prop `lang`, `theme` is same as [ace-editor's doc](https://github.com/ajaxorg/ace)
 
@@ -52,8 +52,9 @@ A packaging of [ace](https://ace.c9.io/). Inspired by [vue2-ace-editor](https://
 1. For easier usage, more props / events added / emitted.
     1. Prop `readonly`: This Boolean attribute indicates that the user cannot modify the value of the control.
     1. Prop `placeholder`: A hint to the user of what can be entered in the control.
-    1. Prop `wrap`: Indicates whether the control wraps text
-    1. Prop `printMargin`: A short hand of `showPrintMargin` and `printMarginColumn`
+    1. Prop `wrap`: Indicates whether the control wraps text.
+    1. Prop `printMargin`: A short hand of `showPrintMargin` and `printMarginColumn`.
+    1. Prop `minLines` and `maxLines`: Specifiy the minimum and maximum number of lines.
     1. All ace events emitted. Docs can be found here: <https://ace.c9.io/#api=editor&nav=api>
     1. Some commonly used methods `focus`, `blur`, `selectAll` provided as shortcuts.
 
