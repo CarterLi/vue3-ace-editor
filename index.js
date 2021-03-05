@@ -33,6 +33,8 @@ export const VAceEditor = defineComponent({
             type: [Boolean, Number],
             default: true,
         },
+        minLines: Number,
+        maxLines: Number,
     },
     emits: ['update:value', 'init', ...Events],
     render() {
@@ -48,6 +50,8 @@ export const VAceEditor = defineComponent({
             wrap: this.wrap,
             printMargin: this.printMargin,
             useWorker: false,
+            minLines: this.minLines,
+            maxLines: this.maxLines,
             ...this.options,
         }));
         this._contentBackup = this.value;
@@ -109,6 +113,12 @@ export const VAceEditor = defineComponent({
         },
         lang(val) {
             this._editor.setOption('mode', 'ace/mode/' + val);
+        },
+        minLines(val) {
+            this._editor.setOption('minLines', val);
+        },
+        maxLines(val) {
+            this._editor.setOption('maxLines', val);
         },
     }
 });

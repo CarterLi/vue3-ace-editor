@@ -20,6 +20,8 @@ export declare const VAceEditor: import("vue").DefineComponent<{
         type: (BooleanConstructor | NumberConstructor)[];
         default: boolean;
     };
+    minLines: NumberConstructor;
+    maxLines: NumberConstructor;
 }, unknown, unknown, {}, {
     focus(this: VAceEditorInstance): void;
     blur(this: VAceEditorInstance): void;
@@ -34,6 +36,8 @@ export declare const VAceEditor: import("vue").DefineComponent<{
 } & {
     options?: Record<string, any> | undefined;
     placeholder?: string | undefined;
+    minLines?: number | undefined;
+    maxLines?: number | undefined;
 }>, {
     lang: string;
     theme: string;
