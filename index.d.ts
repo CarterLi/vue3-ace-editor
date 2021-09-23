@@ -27,21 +27,34 @@ export declare const VAceEditor: import("vue").DefineComponent<{
     blur(this: VAceEditorInstance): void;
     selectAll(this: VAceEditorInstance): void;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<{
+    value?: unknown;
+    lang?: unknown;
+    theme?: unknown;
+    options?: unknown;
+    placeholder?: unknown;
+    readonly?: unknown;
+    wrap?: unknown;
+    printMargin?: unknown;
+    minLines?: unknown;
+    maxLines?: unknown;
+} & {
     value: string;
-    lang: string;
     theme: string;
     readonly: boolean;
     wrap: boolean;
     printMargin: number | boolean;
+    lang: string;
 } & {
     options?: Record<string, any> | undefined;
     placeholder?: string | undefined;
     minLines?: number | undefined;
     maxLines?: number | undefined;
-}>, {
-    lang: string;
+}> & {
+    [x: string & `on${string}`]: ((...args: any[]) => any) | undefined;
+}, {
     theme: string;
     readonly: boolean;
     wrap: boolean;
     printMargin: number | boolean;
+    lang: string;
 }>;

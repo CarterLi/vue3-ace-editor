@@ -60,7 +60,10 @@ export const VAceEditor = defineComponent({
       ...this.options,
     }));
     this._contentBackup = this.value;
+    this._isSettingContent = false;
     editor.on('change', () => {
+      // ref: https://github.com/CarterLi/vue3-ace-editor/issues/11
+      if (this._isSettingContent) return;
       const content = editor.getValue();
       this._contentBackup = content;
       this.$emit('update:value', content);
@@ -93,7 +96,12 @@ export const VAceEditor = defineComponent({
   watch: {
     value(this: VAceEditorInstance, val: string) {
       if (this._contentBackup !== val) {
-        this._editor.setValue(val, 1);
+        try {
+          this._isSettingContent = true;
+          this._editor.setValue(val, 1);
+        } finally {
+          this._isSettingContent = false;
+        }
         this._contentBackup = val;
       }
     },

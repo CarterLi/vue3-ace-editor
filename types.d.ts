@@ -4,6 +4,7 @@ import type { Ace } from 'ace-builds';
 export interface VAceEditorPrivate {
   _editor: Ace.Editor;
   _contentBackup: string;
+  _isSettingContent: boolean;
   _ro: ResizeObserver;
 }
 
