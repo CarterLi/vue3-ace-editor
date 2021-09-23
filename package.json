@@ -1,6 +1,6 @@
 {
   "name": "vue3-ace-editor",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Like vue2-ace-editor but more functional and supports Vue 3",
   "main": "index.js",
   "module": "index.js",
