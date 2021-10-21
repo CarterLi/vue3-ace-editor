@@ -58,6 +58,26 @@ A packaging of [ace](https://ace.c9.io/). Inspired by [vue2-ace-editor](https://
     1. All ace events emitted. Docs can be found here: <https://ace.c9.io/#api=editor&nav=api>
     1. Some commonly used methods `focus`, `blur`, `selectAll` provided as shortcuts.
 
+## Enable syntax checking
+
+To enable syntax checking, module `ace/mode/lang_worker` must be registered, and option `useWorker: true` must be set.
+
+Take JSON for example:
+
+```ts
+import workerJsonUrl from 'ace-builds/src-noconflict/worker-json?url'; // For vite
+
+import workerJsonUrl from 'file-loader?esModule=false!ace-builds/src-noconflict/worker-json.js'; // For webpack / vue-cli
+
+ace.config.setModuleUrl('ace/mode/json_worker', workerJsonUrl);
+```
+
+```html
+<v-ace-editor v-model:value="json" lang="json" :options="{ useWorker: true }" />
+```
+
+See also https://github.com/CarterLi/vue3-ace-editor/issues/3#issuecomment-768190528 to load the worker file from CDN
+
 ## Breaking change
 
 Using of `ace-builds/webpack-resolver` is removed due to bug https://github.com/CarterLi/vue3-ace-editor/issues/3. You MUST import `theme` and `mode` yourself. eg.
