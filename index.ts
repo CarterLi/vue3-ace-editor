@@ -75,7 +75,10 @@ export const VAceEditor = defineComponent({
       }
     });
     this._ro = new ResizeObserver(() => editor.resize());
-    this._ro.observe(this.$el);
+    setTimeout(() => {
+      // Start observing with a short delay to prevent problems with modals/dialogs
+      this._ro.observe(this.$el);
+    }, 300)
     this.$emit('init', editor);
   },
   beforeUnmount(this: VAceEditorInstance) {
