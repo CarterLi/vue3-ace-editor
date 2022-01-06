@@ -1,5 +1,4 @@
-import ace from 'ace-builds';
-import type { Ace } from 'ace-builds';
+import ace, { type Ace } from 'ace-builds';
 import { capitalize, defineComponent, markRaw, h } from 'vue';
 import ResizeObserver from 'resize-observer-polyfill';
 
