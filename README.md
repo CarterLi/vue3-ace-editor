@@ -89,6 +89,11 @@ import 'ace-builds/src-noconflict/theme-chrome';
 
 Find all supported themes and modes in `node_modules/ace-builds/src-noconflict`
 
+## Minimal example using vite
+
+* Preview: <https://carterli.github.io/vue3-ace-editor/>
+* Source: <https://github.com/CarterLi/vue3-ace-editor/tree/gh-pages/demo-source>
+
 ## LICENSE
 
 MIT
