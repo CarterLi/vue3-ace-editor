@@ -1,0 +1,19 @@
+{
+  "name": "vue3-ace-editor-demo",
+  "description": "Vue3-ace-editor demo with syntax checking",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --outDir ..",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "ace-builds": "^1.4.14",
+    "vue": "^3.2.31",
+    "vue3-ace-editor": "^2.2.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.4",
+    "vite": "^2.8.6"
+  }
+}
