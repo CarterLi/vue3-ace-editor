@@ -1,4 +1,4 @@
-{
+const e=`{
   "name": "vue3-ace-editor-demo",
   "description": "Vue3-ace-editor demo with syntax checking",
   "version": "1.0.0",
@@ -17,3 +17,4 @@
     "vite": "^3.0.7"
   }
 }
+`;export{e as default};

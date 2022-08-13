@@ -1,36 +1,76 @@
 <template>
-  <VAceEditor
-    v-model:value="content"
-    lang="json"
-    theme="chrome"
-    style="height: 100%"
-    :options="{ useWorker: true }"
-  />
+  <main>
+    <header>
+      <select v-model="states.lang">
+        <option v-for="lang of langs" :value="lang">{{ lang }}</option>
+      </select>
+      <select v-model="states.theme">
+        <option v-for="theme of themes" :value="theme">{{ theme }}</option>
+      </select>
+    </header>
+    <VAceEditor
+      v-model:value="states.content"
+      class="vue-ace-editor"
+      :lang="states.lang"
+      :theme="states.theme"
+      :options="{ useWorker: true }"
+    />
+  </main>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { reactive, watch } from 'vue';
 import { VAceEditor } from 'vue3-ace-editor';
-import 'ace-builds/src-noconflict/mode-json';
-import 'ace-builds/src-noconflict/theme-chrome';
-import ace from 'ace-builds';
-import workerJsonUrl from 'ace-builds/src-noconflict/worker-json?url';
-ace.config.setModuleUrl('ace/mode/json_worker', workerJsonUrl);
+import './ace-config';
 
-import packageJson from '../package.json';
+const langs = [
+  'json',
+  'javascript',
+  'html',
+];
 
-const content = ref(JSON.stringify(packageJson, null, 2));
+const themes = [
+  'github',
+  'chrome',
+  'monokai',
+];
+
+const states = reactive({
+  lang: 'json',
+  theme: 'github',
+  content: '',
+});
+
+watch(() => states.lang, async lang => {
+  states.content = (await ({
+    json: import('../package.json?raw'),
+    javascript: import('./ace-config.js?raw'),
+    html: import('../index.html?raw'),
+  }[lang])).default;
+}, { immediate: true });
 </script>
 
 
-<style>
-html, body, #app {
+<style scoped>
+main {
   height: 100%;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
 }
-#app {
-  font-family: system-ui;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+header {
+  display: flex;
+}
+
+select + select {
+  margin-left: 15px;
+}
+
+.vue-ace-editor {
+  flex: 1;
+  margin-top: 15px;
+  font-size: 16px;
+  border: 1px solid;
 }
 </style>

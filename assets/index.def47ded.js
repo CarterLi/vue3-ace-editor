@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+const n=`<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/vue3-ace-editor/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue3-ace-editor Demo</title>
     <style>
@@ -19,11 +19,10 @@
         -moz-osx-font-smoothing: grayscale;
       }
     </style>
-    <script type="module" crossorigin src="/vue3-ace-editor/assets/index.396dc5c4.js"></script>
-    <link rel="stylesheet" href="/vue3-ace-editor/assets/index.0b219a0f.css">
   </head>
   <body>
     <div id="app"></div>
-    
+    <script type="module" src="/src/main.js"><\/script>
   </body>
 </html>
+`;export{n as default};
