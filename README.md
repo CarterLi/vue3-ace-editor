@@ -83,8 +83,20 @@ See also https://github.com/CarterLi/vue3-ace-editor/issues/3#issuecomment-76819
 Using of `ace-builds/webpack-resolver` is removed due to bug https://github.com/CarterLi/vue3-ace-editor/issues/3. You MUST import `theme` and `mode` yourself. eg.
 
 ```js
-import 'ace-builds/src-noconflict/mode-text';
+import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/theme-chrome';
+```
+
+To use dynamic loading to avoid first-load overhead
+
+```js
+import ace from 'ace-builds';
+
+import modeJsonUrl from 'ace-builds/src-noconflict/mode-json?url';
+ace.config.setModuleUrl('ace/mode/json', modeJsonUrl);
+
+import themeChromeUrl from 'ace-builds/src-noconflict/theme-chrome?url';
+ace.config.setModuleUrl('ace/theme/chrome', themeChromeUrl);
 ```
 
 Find all supported themes and modes in `node_modules/ace-builds/src-noconflict`
