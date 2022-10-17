@@ -9,6 +9,9 @@ ace.config.setModuleUrl('ace/mode/javascript', modeJavascriptUrl);
 import modeHtmlUrl from 'ace-builds/src-noconflict/mode-html?url';
 ace.config.setModuleUrl('ace/mode/html', modeHtmlUrl);
 
+import modeYamlUrl from 'ace-builds/src-noconflict/mode-yaml?url';
+ace.config.setModuleUrl('ace/mode/yaml', modeYamlUrl);
+
 import themeGithubUrl from 'ace-builds/src-noconflict/theme-github?url';
 ace.config.setModuleUrl('ace/theme/github', themeGithubUrl);
 
