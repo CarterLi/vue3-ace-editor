@@ -32,4 +32,22 @@ ace.config.setModuleUrl('ace/mode/javascript_worker', workerJavascriptUrl);
 
 import workerHtmlUrl from 'ace-builds/src-noconflict/worker-html?url';
 ace.config.setModuleUrl('ace/mode/html_worker', workerHtmlUrl);
+
+import workerYamlUrl from 'ace-builds/src-noconflict/worker-yaml?url';
+ace.config.setModuleUrl('ace/mode/yaml_worker', workerYamlUrl);
+
+import snippetsHtmlUrl from 'ace-builds/src-noconflict/snippets/html?url';
+ace.config.setModuleUrl('ace/snippets/html', snippetsHtmlUrl);
+
+import snippetsJsUrl from 'ace-builds/src-noconflict/snippets/javascript?url';
+ace.config.setModuleUrl('ace/snippets/javascript', snippetsJsUrl);
+
+import snippetsYamlUrl from 'ace-builds/src-noconflict/snippets/yaml?url';
+ace.config.setModuleUrl('ace/snippets/javascript', snippetsYamlUrl);
+
+import snippetsJsonUrl from 'ace-builds/src-noconflict/snippets/json?url';
+ace.config.setModuleUrl('ace/snippets/json', snippetsJsonUrl);
+
+import 'ace-builds/src-noconflict/ext-language_tools';
+ace.require("ace/ext/language_tools");
 `;export{e as default};
