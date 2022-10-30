@@ -14,7 +14,12 @@
       class="vue-ace-editor"
       :lang="states.lang"
       :theme="states.theme"
-      :options="{ useWorker: true }"
+      :options="{
+        useWorker: true,
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true,
+      }"
     />
     <OutlineTree v-if="$refs.aceRef" class="outline-tree" :editor="$refs.aceRef._editor" :content="states.content" />
   </main>
