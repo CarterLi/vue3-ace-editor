@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+const r=`lockfileVersion: 5.4
 
 specifiers:
   '@vitejs/plugin-vue': ^4.0.0
@@ -775,3 +775,4 @@ packages:
       resize-observer-polyfill: registry.npmmirror.com/resize-observer-polyfill/1.5.1
       vue: registry.npmmirror.com/vue/3.2.47
     dev: false
+`;export{r as default};

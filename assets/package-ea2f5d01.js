@@ -8,14 +8,14 @@ const e=`{
     "preview": "vite preview"
   },
   "dependencies": {
-    "ace-builds": "^1.12.3",
-    "vue": "^3.2.41",
+    "ace-builds": "^1.15.2",
+    "vue": "^3.2.47",
     "vue3-ace-editor": "^2.2.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.2.0",
-    "sass": "^1.55.0",
-    "vite": "^3.2.1"
+    "@vitejs/plugin-vue": "^4.0.0",
+    "sass": "^1.58.3",
+    "vite": "^4.1.2"
   }
 }
 `;export{e as default};
