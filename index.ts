@@ -111,6 +111,9 @@ export const VAceEditor = defineComponent({
       this._editor.setOptions(val);
     },
     readonly(this: VAceEditorInstance, val: boolean) {
+      this._editor.setOption('highlightActiveLine', !val)
+      this._editor.setOption('highlightGutterLine', !val)
+      ;(this._editor.renderer as any).$cursorLayer.element.style.display = val ? "none" : "block"
       this._editor.setReadOnly(val);
     },
     placeholder(this: VAceEditorInstance, val: string) {

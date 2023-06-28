@@ -110,6 +110,9 @@ export const VAceEditor = defineComponent({
             this._editor.setOptions(val);
         },
         readonly(val) {
+            this._editor.setOption('highlightActiveLine', !val);
+            this._editor.setOption('highlightGutterLine', !val);
+            this._editor.renderer.$cursorLayer.element.style.display = val ? "none" : "block";
             this._editor.setReadOnly(val);
         },
         placeholder(val) {
