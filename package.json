@@ -13,11 +13,13 @@
     "build": "tsc -p ."
   },
   "dependencies": {
-    "ace-builds": "^1.4.13",
-    "resize-observer-polyfill": "^1.5.1",
-    "vue": "^3.2.26"
+    "resize-observer-polyfill": "^1.5.1"
+  },
+  "peerDependencies": {
+    "ace-builds": "*",
+    "vue": "^3"
   },
   "devDependencies": {
-    "typescript": "^4.5.4"
+    "typescript": "^5.1.6"
   }
 }
