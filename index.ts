@@ -16,6 +16,7 @@ const Events = [
 ];
 
 export const VAceEditor = defineComponent({
+  name: 'VAceEditor',
   props: {
     value: {
       type: String,
