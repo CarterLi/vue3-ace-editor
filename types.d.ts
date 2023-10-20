@@ -25,6 +25,7 @@ export interface VAceEditorMethods {
   focus(): void;
   blur(): void;
   selectAll(): void;
+  getAceInstance(): Ace.Editor;
 }
 
 export interface VAceEditorInstance extends

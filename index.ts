@@ -91,6 +91,9 @@ export const VAceEditor = defineComponent({
     selectAll(this: VAceEditorInstance) {
       this._editor.selectAll();
     },
+    getAceInstance(this: VAceEditorInstance) {
+      return this._editor;
+    },
   },
   watch: {
     value(this: VAceEditorInstance, val: string) {
