@@ -12,6 +12,7 @@ const Events = [
     'paste',
 ];
 export const VAceEditor = defineComponent({
+    name: 'VAceEditor',
     props: {
         value: {
             type: String,
@@ -88,6 +89,9 @@ export const VAceEditor = defineComponent({
         },
         selectAll() {
             this._editor.selectAll();
+        },
+        getAceInstance() {
+            return this._editor;
         },
     },
     watch: {

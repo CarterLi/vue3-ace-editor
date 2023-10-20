@@ -1,3 +1,4 @@
+import { type Ace } from 'ace-builds';
 import type { VAceEditorInstance } from './types';
 export declare const VAceEditor: import("vue").DefineComponent<{
     value: {
@@ -26,6 +27,7 @@ export declare const VAceEditor: import("vue").DefineComponent<{
     focus(this: VAceEditorInstance): void;
     blur(this: VAceEditorInstance): void;
     selectAll(this: VAceEditorInstance): void;
+    getAceInstance(this: VAceEditorInstance): Ace.Editor;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     value: {
         type: StringConstructor;
