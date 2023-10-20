@@ -12,6 +12,7 @@
       ref="aceRef"
       v-model:value="states.content"
       class="vue-ace-editor"
+      :placeholder="`Enter your ${states.lang} code here`"
       :lang="states.lang"
       :theme="states.theme"
       :options="{

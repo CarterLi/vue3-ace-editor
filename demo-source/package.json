@@ -8,13 +8,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "ace-builds": "^1.15.2",
-    "vue": "^3.2.47",
-    "vue3-ace-editor": "^2.2.2"
+    "ace-builds": "^1.30.0",
+    "vue": "^3.3.5",
+    "vue3-ace-editor": "^2.2.3"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.0.0",
-    "sass": "^1.58.3",
-    "vite": "^4.1.2"
+    "@vitejs/plugin-vue": "^4.4.0",
+    "sass": "^1.69.4",
+    "vite": "^4.5.0"
   }
 }
