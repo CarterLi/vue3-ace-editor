@@ -106,6 +106,34 @@ Find all supported themes and modes in `node_modules/ace-builds/src-noconflict`
 * Preview: <https://carterli.github.io/vue3-ace-editor/>
 * Source: <https://github.com/CarterLi/vue3-ace-editor/tree/gh-pages/demo-source>
 
+## Use it with Nuxt
+
+Since ace doesn't support SSR, using it with Nuxt can be tricky. You must make sure that `ace` related things are loaded only at client side.
+
+```vue
+<script setup>
+import { markRaw, onMounted, ref } from 'vue';
+
+const VAceEditor = ref('div'); // Stores dynamic loaded component. Before `vue3-ace-editor` is loaded, a `div` is used as a placeholder
+const content = ref(JSON.stringify({ platform: 'Nuxt', env: 'SSR' }, null, 2));
+
+onMounted(async () => { // onMounted is a client-only lifecycle hook
+  await import('ace-builds'); // To importing things in a function, dynamic import must be used
+  await import('ace-builds/src-noconflict/mode-json');
+  await import('ace-builds/src-noconflict/theme-chrome');
+  VAceEditor.value = markRaw((await import('vue3-ace-editor')).VAceEditor);
+});
+</script>
+<template>
+  <div>
+    <component :is="VAceEditor" v-model:value="content" lang="json" theme="chrome" style="height: 400px" />
+    <textarea :value="content" style="width: 100%; margin-top: 10px" rows="5" />
+  </div>
+</template>
+```
+
+Full example: <https://stackblitz.com/edit/github-oeoxgm?file=app.vue>
+
 ## LICENSE
 
 MIT
