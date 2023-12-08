@@ -12,7 +12,7 @@ A packaging of [ace](https://ace.c9.io/). Inspired by [vue2-ace-editor](https://
 1. Install
 
     ```shell
-    yarn add vue3-ace-editor
+    yarn add vue3-ace-editor ace-builds
     ```
 
 2. Register it in `components` of Vue options
