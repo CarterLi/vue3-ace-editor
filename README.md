@@ -99,6 +99,13 @@ import themeChromeUrl from 'ace-builds/src-noconflict/theme-chrome?url';
 ace.config.setModuleUrl('ace/theme/chrome', themeChromeUrl);
 ```
 
+Note that to make search box (`Ctrl+F` or `Command+F`) work, `ext-searchbox` must also be loaded.
+
+```js
+import extSearchboxUrl from 'ace-builds/src-noconflict/ext-searchbox?url';
+ace.config.setModuleUrl('ace/ext/searchbox', extSearchboxUrl);
+```
+
 Find all supported themes and modes in `node_modules/ace-builds/src-noconflict`
 
 ## Minimal example using vite
