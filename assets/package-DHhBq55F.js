@@ -1,6 +1,7 @@
 const e=`{
   "name": "vue3-ace-editor-demo",
   "description": "Vue3-ace-editor demo with syntax checking",
+  "type": "module",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
@@ -8,14 +9,14 @@ const e=`{
     "preview": "vite preview"
   },
   "dependencies": {
-    "ace-builds": "^1.15.2",
-    "vue": "^3.2.47",
-    "vue3-ace-editor": "^2.2.2"
+    "ace-builds": "^1.32.7",
+    "vue": "^3.4.21",
+    "vue3-ace-editor": "^2.2.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.0.0",
-    "sass": "^1.58.3",
-    "vite": "^4.1.2"
+    "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.71.1",
+    "vite": "^5.1.6"
   }
 }
 `;export{e as default};
