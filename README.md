@@ -83,6 +83,27 @@ Find all supported themes and modes in `node_modules/ace-builds/src-noconflict`
     1. All ace events emitted. Docs can be found here: <https://ace.c9.io/#api=editor&nav=api>
     1. Some commonly used methods `focus`, `blur`, `selectAll` provided as shortcuts.
 
+## Get raw ace instance
+
+Use `getAceInstance`
+
+```vue
+<script setup>
+    import { ref, onMounted } from 'vue';
+
+    const aceRef = ref(null);
+
+    onMounted(() => {
+        console.log(aceRef.value.getAceInstance());
+    })
+</script>
+<template>
+    <v-ace-editor ref="aceRef" v-bind="..." />
+</template>
+```
+
+`@init` is provided for `vue2-ace-editor` compatibility only but is not recommanded to use.
+
 ## Enable syntax checking
 
 To enable syntax checking, module `ace/mode/lang_worker` must be registered, and option `useWorker: true` must be set.
