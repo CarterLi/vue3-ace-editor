@@ -7,43 +7,68 @@ vue3-ace-editor
 
 A packaging of [ace](https://ace.c9.io/). Inspired by [vue2-ace-editor](https://github.com/chairuosen/vue2-ace-editor), but supports [Vue 3](https://github.com/vuejs/vue-next)
 
-## How to use
+## Install
 
-1. Install
+`ace-builds` must be installed alongside `vue3-ace-editor` using your favorite package manager.
 
-    ```shell
-    yarn add vue3-ace-editor ace-builds
-    ```
+* npm i vue3-ace-editor ace-builds
+* yarn add vue3-ace-editor ace-builds
+* pnpm i vue3-ace-editor ace-builds
 
-2. Register it in `components` of Vue options
+## Usage
 
-    ```js
+```vue
+<script setup>
+    import { ref } from 'vue';
     import { VAceEditor } from 'vue3-ace-editor';
+    import 'ace-builds/src-noconflict/mode-json'; // Load the language definition file used below
+    import 'ace-builds/src-noconflict/theme-chrome'; // Load the theme definition file used below
 
-    export default {
-        data,
-        methods,
-        ...
-        components: {
-            VAceEditor,
-        },
-    }
-    ```
-
-3. Use the component in template
-
-    ```html
+    const content = ref(JSON.stringify({ message: 'Hello Ace' }));
+</script>
+<template>
     <v-ace-editor
         v-model:value="content"
-        @init="editorInit"
-        lang="html"
+        lang="json"
         theme="chrome"
         style="height: 300px" />
-    ```
+</template>
+```
 
-    prop `v-model:value` is required. `<v-ace-editor>` has no height by default. Its height must be specified manually, or set both `min-lines` and `max-lines` to make the editor's height auto-grow.
+Property `v-model:value` is required. `<v-ace-editor>` has no height by default. Its height must be specified manually, or set both `min-lines` and `max-lines` to make the editor's height auto-grow.
 
-    prop `lang`, `theme` is same as [ace-editor's doc](https://github.com/ajaxorg/ace)
+Property `lang`, `theme` is same as [ace-editor's doc](https://github.com/ajaxorg/ace)
+
+
+## Load modes and themes (**REQUIRED**)
+
+Using of `ace-builds/webpack-resolver` is removed due to bug https://github.com/CarterLi/vue3-ace-editor/issues/3. You **MUST** import `theme` and `mode` yourself. eg.
+
+```js
+import 'ace-builds/src-noconflict/mode-json';
+import 'ace-builds/src-noconflict/theme-chrome';
+```
+
+To use dynamic loading to avoid first-load overhead
+
+```js
+import ace from 'ace-builds';
+
+import modeJsonUrl from 'ace-builds/src-noconflict/mode-json?url';
+ace.config.setModuleUrl('ace/mode/json', modeJsonUrl);
+
+import themeChromeUrl from 'ace-builds/src-noconflict/theme-chrome?url';
+ace.config.setModuleUrl('ace/theme/chrome', themeChromeUrl);
+```
+
+Note that to make search box (`Ctrl+F` or `Command+F`) work, `ext-searchbox` must also be loaded.
+
+```js
+import extSearchboxUrl from 'ace-builds/src-noconflict/ext-searchbox?url';
+ace.config.setModuleUrl('ace/ext/searchbox', extSearchboxUrl);
+```
+
+Find all supported themes and modes in `node_modules/ace-builds/src-noconflict`
 
 ## Deferences with [vue2-ace-editor](https://github.com/chairuosen/vue2-ace-editor)
 
@@ -77,36 +102,6 @@ ace.config.setModuleUrl('ace/mode/json_worker', workerJsonUrl);
 ```
 
 See also https://github.com/CarterLi/vue3-ace-editor/issues/3#issuecomment-768190528 to load the worker file from CDN
-
-## Breaking change
-
-Using of `ace-builds/webpack-resolver` is removed due to bug https://github.com/CarterLi/vue3-ace-editor/issues/3. You MUST import `theme` and `mode` yourself. eg.
-
-```js
-import 'ace-builds/src-noconflict/mode-json';
-import 'ace-builds/src-noconflict/theme-chrome';
-```
-
-To use dynamic loading to avoid first-load overhead
-
-```js
-import ace from 'ace-builds';
-
-import modeJsonUrl from 'ace-builds/src-noconflict/mode-json?url';
-ace.config.setModuleUrl('ace/mode/json', modeJsonUrl);
-
-import themeChromeUrl from 'ace-builds/src-noconflict/theme-chrome?url';
-ace.config.setModuleUrl('ace/theme/chrome', themeChromeUrl);
-```
-
-Note that to make search box (`Ctrl+F` or `Command+F`) work, `ext-searchbox` must also be loaded.
-
-```js
-import extSearchboxUrl from 'ace-builds/src-noconflict/ext-searchbox?url';
-ace.config.setModuleUrl('ace/ext/searchbox', extSearchboxUrl);
-```
-
-Find all supported themes and modes in `node_modules/ace-builds/src-noconflict`
 
 ## Minimal example using vite
 
