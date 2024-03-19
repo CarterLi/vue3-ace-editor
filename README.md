@@ -45,6 +45,7 @@ Property `lang`, `theme` is same as [ace-editor's doc](https://github.com/ajaxor
 Using of `ace-builds/webpack-resolver` is removed due to bug https://github.com/CarterLi/vue3-ace-editor/issues/3. You **MUST** import `theme` and `mode` yourself. eg.
 
 ```js
+// You MUST make sure that `ace-builds` or `vue3-ace-editor` (which imports `ace-builds` internally) is loaded before importing `mode` and `theme`
 import 'ace-builds/src-noconflict/mode-json';
 import 'ace-builds/src-noconflict/theme-chrome';
 ```
