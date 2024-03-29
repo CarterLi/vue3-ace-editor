@@ -7,7 +7,7 @@
   "type": "module",
   "types": "index.d.ts",
   "repository": "git@github.com:CarterLi/vue3-ace-editor.git",
-  "author": "李通洲 <carter.li@eoitek.com>",
+  "author": "李通洲 <zhangsongcui@live.cn>",
   "license": "MIT",
   "scripts": {
     "build": "tsc -p ."
