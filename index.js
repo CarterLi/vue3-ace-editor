@@ -5,6 +5,7 @@ const Events = [
     'blur',
     'input',
     'change',
+    'changeSelection',
     'changeSelectionStyle',
     'changeSession',
     'copy',
