@@ -1,6 +1,6 @@
-import { type Ace } from 'ace-builds';
+import ace from 'ace-builds';
 import type { VAceEditorInstance } from './types';
-export declare const VAceEditor: import("vue").DefineComponent<{
+export declare const VAceEditor: import("vue").DefineComponent<import("vue").ExtractPropTypes<{
     value: {
         type: StringConstructor;
         required: true;
@@ -23,12 +23,12 @@ export declare const VAceEditor: import("vue").DefineComponent<{
     };
     minLines: NumberConstructor;
     maxLines: NumberConstructor;
-}, unknown, unknown, {}, {
+}>, {}, {}, {}, {
     focus(this: VAceEditorInstance): void;
     blur(this: VAceEditorInstance): void;
     selectAll(this: VAceEditorInstance): void;
-    getAceInstance(this: VAceEditorInstance): Ace.Editor;
-}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    getAceInstance(this: VAceEditorInstance): ace.Editor;
+}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     value: {
         type: StringConstructor;
         required: true;
@@ -51,12 +51,12 @@ export declare const VAceEditor: import("vue").DefineComponent<{
     };
     minLines: NumberConstructor;
     maxLines: NumberConstructor;
-}>> & {
+}>> & Readonly<{
     [x: `on${Capitalize<string>}`]: ((...args: any[]) => any) | undefined;
-}, {
+}>, {
     lang: string;
     theme: string;
     readonly: boolean;
     wrap: boolean;
     printMargin: number | boolean;
-}, {}>;
+}, {}, {}, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;

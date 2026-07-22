@@ -1,6 +1,5 @@
 import ace from 'ace-builds';
 import { capitalize, defineComponent, markRaw, h } from 'vue';
-import ResizeObserver from 'resize-observer-polyfill';
 const Events = [
     'blur',
     'input',
@@ -77,9 +76,8 @@ export const VAceEditor = defineComponent({
         this.$emit('init', editor);
     },
     beforeUnmount() {
-        var _a, _b;
-        (_a = this._ro) === null || _a === void 0 ? void 0 : _a.disconnect();
-        (_b = this._editor) === null || _b === void 0 ? void 0 : _b.destroy();
+        this._ro?.disconnect();
+        this._editor?.destroy();
     },
     methods: {
         focus() {

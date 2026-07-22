@@ -1,6 +1,5 @@
 import ace, { type Ace } from 'ace-builds';
 import { capitalize, defineComponent, markRaw, h } from 'vue';
-import ResizeObserver from 'resize-observer-polyfill';
 
 import type { VAceEditorInstance } from './types';
 
